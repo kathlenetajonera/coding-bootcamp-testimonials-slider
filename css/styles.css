@@ -96,6 +96,7 @@
 
 .testimonial h2 {
     color: hsl(240, 38%, 20%);
+    font-size: 1.3rem;
     font-weight: 300;
     margin-bottom: 1.5rem;
     line-height: 2rem;
@@ -132,6 +133,10 @@
         padding: 3rem 2rem;
         text-align: left;
         background-position-x: 20%;
+    }
+
+    .testimonial h2 {
+        font-size: 1.5rem;
     }
 
     .author {
