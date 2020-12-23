@@ -6,11 +6,9 @@ const nextBtns = document.querySelectorAll(".next")
 nextBtns.forEach(next => {
     next.addEventListener("click", () => {
         if (secondTestimonial.classList.contains("inactive")) {
-            firstTestimonial.classList.add("inactive")
-            secondTestimonial.classList.remove("inactive")
+            showSecondTestimonial()
         } else {
-            firstTestimonial.classList.remove("inactive")
-            secondTestimonial.classList.add("inactive")
+            showFirstTestimonial()
         }
     })
 })
@@ -18,11 +16,39 @@ nextBtns.forEach(next => {
 prevBtns.forEach(prev => {
     prev.addEventListener("click", () => {
         if (firstTestimonial.classList.contains("inactive")) {
-            firstTestimonial.classList.remove("inactive")
-            secondTestimonial.classList.add("inactive")
+            showFirstTestimonial()
         } else {
-            firstTestimonial.classList.add("inactive")
-            secondTestimonial.classList.remove("inactive")
+            showSecondTestimonial()
         }
     })
 })
+
+document.addEventListener("keydown", e => {
+    const keyCode = e.keyCode
+
+    switch (keyCode) {
+        case 39:
+            if (secondTestimonial.classList.contains("inactive")) {
+                showSecondTestimonial()
+            } else {
+                showFirstTestimonial()
+            }
+            break;
+        case 37:
+            if (firstTestimonial.classList.contains("inactive")) {
+                showFirstTestimonial()
+            } else {
+                showSecondTestimonial()
+            }
+    }
+})
+
+function showFirstTestimonial() {
+    firstTestimonial.classList.remove("inactive")
+    secondTestimonial.classList.add("inactive")
+}
+
+function showSecondTestimonial() {
+    firstTestimonial.classList.add("inactive")
+    secondTestimonial.classList.remove("inactive")
+}
