@@ -1,0 +1,196 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+    font-family: "Inter", sans-serif;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+:root {
+    font-size: 14px;
+}
+
+.landing {
+    min-height: 100vh;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing::after {
+    content: url("/images/pattern-curve.svg");
+    position: absolute;
+    bottom: 0;
+    left: -20%;
+    transform: translateY(50%);
+    z-index: -1;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: 330px;
+    grid-gap: 2rem;
+}
+
+.author-image {
+    background-image: url("/images/pattern-bg.svg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.author-image img {
+    width: 250px;
+}
+
+.slider {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 88px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 2rem;
+    cursor: pointer;
+    box-shadow: 0 5px 1rem 0 rgb(202, 202, 222);
+}
+
+.prev, .next {
+    padding: .8rem;
+    display: flex;
+}
+
+.prev:hover svg path, .next:hover svg path {
+    stroke: hsl(240, 38%, 20%);
+}
+
+.testimonial {
+    text-align: center;
+    padding: 2rem 0;
+    background-image: url("/images/pattern-quotes.svg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 20%;
+    cursor: default;
+}
+
+.testimonial h2 {
+    color: hsl(240, 38%, 20%);
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    line-height: 2rem;
+}
+
+.name {
+    color: hsl(240, 38%, 20%);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.occupation {
+    color: hsl(240, 18%, 77%);
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.inactive {
+    display: none;
+}
+
+@media (min-width: 680px) {
+    .landing::after {
+        left: 0;
+        transform: translateY(0);
+    }
+
+    .card {
+        grid-gap: 0;
+    }
+
+    .testimonial {
+        align-self: center;
+        padding: 3rem 2rem;
+        text-align: left;
+        background-position-x: 20%;
+    }
+
+    .author {
+        display: flex;
+        align-items: center;
+    }
+
+    .name {
+        margin-right: .5rem;
+    }
+
+    .author-image {
+        order: 1;
+        width: 90%;
+    }
+
+    .author-image img {
+        max-width: 80%;
+    }
+
+    .slider {
+        left: 30%;
+    }
+}
+
+@media (min-width: 1200px) {
+    :root {
+        font-size: 20px;
+    }
+
+    .landing {
+        padding: 1rem;
+    }
+
+    .card {
+        grid-template-rows: 550px;
+    }
+
+    .testimonial {
+        transform: translateX(20%);
+        padding: 3rem 1.5rem;
+        background-size: 18%;
+    }
+
+    .author-image {
+        transform: translateX(-8%);
+    }
+
+    .author-image img {
+        width: 80%;
+    }
+
+    .name, .occupation {
+        font-size: .8rem;
+    }
+
+    .slider {
+        width: 100px;
+        transform: translate(-50%, -30%);
+    }
+}
+
